@@ -1,12 +1,11 @@
 import React from 'react';
+import Counter from './Counter';
 
 const Players = () => {
   return (
     <div className='player'>
       <span className='player-name'>Carl</span>
-      <div className='counter' />
-      <button className='counter-action decrement'> - </button>
-      <button className='counter-action increment'> + </button>
+      <Counter />
     </div>
   );
 };
