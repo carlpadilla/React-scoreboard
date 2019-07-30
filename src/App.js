@@ -4,14 +4,16 @@ import Players from './components/Players';
 import './App.css';
 
 const players = [
-  { name: 'Carl Padilla', score: 14 },
+  { name: 'Carl Padilla', score: 14, id: 1 },
   {
     name: 'Jenny Moua',
-    score: 69
+    score: 69,
+    id: 2
   },
   {
     name: 'Nina Moua',
-    score: 10
+    score: 10,
+    id: 3
   }
 ];
 
@@ -20,7 +22,13 @@ function App(props) {
     <div className='App'>
       <Header title='Scoreboard' totalPlayers={players.length} />
       {players.map(plyr => {
-        return <Players playerName={plyr.name} score={plyr.score} />;
+        return (
+          <Players
+            key={plyr.id.toString()}
+            playerName={plyr.name}
+            score={plyr.score}
+          />
+        );
       })}
     </div>
   );
