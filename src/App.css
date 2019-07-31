@@ -12,15 +12,17 @@ header {
   text-align: center;
   display: flex;
   align-items: center;
-  background-color: #9980fd;
+  background-color: #3000ee;
   border-bottom: solid 2px #d4caff;
 }
 
 header h1 {
   flex-grow: 1;
-  font-size: 1.5em;
-  letter-spacing: 2px;
+  font-size: 1.8em;
+  letter-spacing: 2.5px;
   font-weight: normal;
+  font-family: 'Lobster Two', cursive;
+  text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
 }
 
 /* FORMS */

@@ -3,29 +3,50 @@ import Header from './components/Header';
 import Players from './components/Players';
 import './App.css';
 
-const players = [
-  { name: 'Carl Padilla', score: 14, id: 1 },
-  {
-    name: 'Jenny Moua',
-    score: 69,
-    id: 2
-  },
-  {
-    name: 'Nina Moua',
-    score: 10,
-    id: 3
-  }
-];
+// const players = [
 
-function App(props) {
-  return (
-    <div className='App'>
-      <Header title='Scoreboard' totalPlayers={players.length} />
-      {players.map(plyr => {
-        return <Players key={plyr.id.toString()} playerName={plyr.name} />;
-      })}
-    </div>
-  );
+// ];
+
+class App extends React.Component {
+  state = {
+    players: [
+      { name: 'Player One', id: 1 },
+      {
+        name: 'Player Two',
+        id: 2
+      },
+      {
+        name: 'Player Three',
+        id: 3
+      }
+    ]
+  };
+
+  removePlayer = id => {
+    this.setState(prevState => {
+      return {
+        players: prevState.players.filter(p => p.id !== id)
+      };
+    });
+  };
+
+  render() {
+    return (
+      <div className='App'>
+        <Header title='Scoreboard' totalPlayers={this.state.players.length} />
+        {this.state.players.map(plyr => {
+          return (
+            <Players
+              key={plyr.id.toString()}
+              id={plyr.id}
+              playerName={plyr.name}
+              remPlayer={this.removePlayer}
+            />
+          );
+        })}
+      </div>
+    );
+  }
 }
 
 export default App;
