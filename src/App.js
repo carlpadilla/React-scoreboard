@@ -22,13 +22,7 @@ function App(props) {
     <div className='App'>
       <Header title='Scoreboard' totalPlayers={players.length} />
       {players.map(plyr => {
-        return (
-          <Players
-            key={plyr.id.toString()}
-            playerName={plyr.name}
-            score={plyr.score}
-          />
-        );
+        return <Players key={plyr.id.toString()} playerName={plyr.name} />;
       })}
     </div>
   );
