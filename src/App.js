@@ -10,16 +10,27 @@ import './App.css';
 class App extends React.Component {
   state = {
     players: [
-      { name: 'Player One', id: 1 },
+      { name: 'Player One', id: 1, score: 0 },
       {
         name: 'Player Two',
-        id: 2
+        id: 2,
+        score: 0
       },
       {
         name: 'Player Three',
-        id: 3
+        id: 3,
+        score: 0
       }
     ]
+  };
+
+  handleScoreChange = (index, delta) => {
+    this.setState(prevState => {
+      return {
+        score: (prevState.players[index].score += delta)
+      };
+    });
+    // console.log(index, delta);
   };
 
   removePlayer = id => {
@@ -34,12 +45,15 @@ class App extends React.Component {
     return (
       <div className='App'>
         <Header title='Scoreboard' totalPlayers={this.state.players.length} />
-        {this.state.players.map(plyr => {
+        {this.state.players.map((player, index) => {
           return (
             <Players
-              key={plyr.id.toString()}
-              id={plyr.id}
-              playerName={plyr.name}
+              key={player.id.toString()}
+              id={player.id}
+              playerName={player.name}
+              score={player.score}
+              index={index}
+              changeScore={this.handleScoreChange}
               remPlayer={this.removePlayer}
             />
           );
