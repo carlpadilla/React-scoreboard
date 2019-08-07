@@ -9,9 +9,15 @@ class AddPlayerForm extends Component {
     this.setState({ value: e.target.value });
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.addPlayer(this.state.value);
+    this.setState({ value: '' });
+  };
+
   render() {
     return (
-      <form action=''>
+      <form onSubmit={this.handleSubmit}>
         <input
           type='text'
           placeholder='Enter Player Name'
