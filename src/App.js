@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Players from './components/Players';
+import AddPlayerForm from './components/AddPlayerForm';
 import './App.css';
 
 // const players = [
@@ -58,6 +59,7 @@ class App extends React.Component {
             />
           );
         })}
+        <AddPlayerForm />
       </div>
     );
   }

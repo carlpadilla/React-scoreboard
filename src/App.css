@@ -12,7 +12,7 @@ header {
   text-align: center;
   display: flex;
   align-items: center;
-  background-color: #3000ee;
+  background-color: #0083ee;
   border-bottom: solid 2px #d4caff;
 }
 
@@ -29,7 +29,7 @@ header h1 {
 
 form {
   display: flex;
-  background-color: #8063fa;
+  background-color: #0083ee;
 }
 
 input[type='text'] {
@@ -38,7 +38,7 @@ input[type='text'] {
   margin: 15px 10px 15px 15px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #5b45b9;
+  background-color: #0369bd;
   border-style: none;
   text-shadow: none;
   text-transform: uppercase;
@@ -61,7 +61,7 @@ input[type='submit'] {
   font-size: 0.6em;
   margin: 15px 15px 15px 0;
   padding: 10px;
-  background-color: #44338d;
+  background-color: #0369bd;
   border-radius: 5px;
   border: none;
   color: #fff;
