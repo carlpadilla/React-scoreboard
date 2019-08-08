@@ -70,7 +70,7 @@ class App extends React.Component {
               score={player.score}
               index={index}
               changeScore={this.handleScoreChange}
-              remPlayer={this.removePlayer}
+              removePlayer={this.removePlayer}
             />
           );
         })}
